@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <form method = "get" action = "/greeting">
+            <input type = text name = "say"><br>
+            <input type = text name = "to"><br>
+            <button>SUBMIT</button>
+        </form>
+    </div>
+    <div>
+
+        <input type = text id = "say" placeholder = "인사말"><br>
+        <input type = text id = "to" placeholder = "대상자"><br>
+        <button onclick="send()">SUBMIT</button>
+    </div>
+    <script>
+        function send()
+        {
+            let say = $("#say").val();
+            let to = $("#to").val();
+            // if(say == '' && to == '')
+            //     location.href = "greeting1";
+            if(say == '')
+                location.href = "greeting1//" + to;
+            location.href = "greeting1/"+say+"/"+to;
+        }
+    </script>
+</body>
+</html>
